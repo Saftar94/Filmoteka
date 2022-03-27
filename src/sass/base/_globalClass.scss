@@ -1,0 +1,121 @@
+@media screen and (min-width: $tablet-general) {
+  html {
+    overflow: overlay;
+    scrollbar-color: $scroll-color $background-scroll-color;
+    scrollbar-width: thin;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: $scroll-color;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+.scrollRem {
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+}
+
+body {
+  background-color: $primary-background-color;
+  color: $primary-text-color;
+  font-family: $primary-font-family, sans-serif;
+  font-size: 12px;
+  line-height: 1.33;
+  background-color: $fourth-background-color;
+
+  @media screen and (min-width: $desktop-up) {
+    // -----set govnoimage)))
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('../images/img/background/bg1440.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  @media screen and (min-width: 1680px) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('../images/img/background/bg1680.jpg');
+  }
+
+  @media screen and (min-width: 1920px) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('../images/img/background/bg1920.jpg');
+  }
+  @media screen and (min-width: 2600px) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('../images/img/background/bg3840.jpg');
+  }
+  // -----set govnoimage)))
+
+  &::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    width: 1024px;
+    height: 100vh;
+    background-color: $primary-background-color;
+    box-shadow: $container-shadow;
+    @media screen and (min-width: $desktop-only) {
+      width: $desktop-only;
+    }
+  }
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  @media screen and (min-width: $mobile-first) {
+    width: $mobile-first;
+  }
+
+  @media screen and (min-width: $tablet-general) {
+    width: $tablet-general;
+    padding-left: 75px;
+    padding-right: 75px;
+  }
+
+  @media screen and (min-width: $desktop-up) {
+    width: $desktop-up;
+    padding-left: 71px;
+    padding-right: 71px;
+  }
+  @media screen and (min-width: $desktop-only) {
+    width: $desktop-only;
+  }
+}
+
+.container-hero {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 100%;
+  @media screen and (min-width: $mobile-first) {
+    width: $mobile-first;
+  }
+
+  @media screen and (min-width: $tablet-general) {
+    width: $tablet-general;
+    padding-left: 216px;
+    padding-right: 216px;
+  }
+
+  @media screen and (min-width: $desktop-up) {
+    width: $desktop-up;
+    padding-left: 344px;
+    padding-right: 344px;
+  }
+  @media screen and (min-width: $desktop-only) {
+    width: $desktop-only;
+  }
+}

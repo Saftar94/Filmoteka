@@ -1,0 +1,9 @@
+.gallery__null-item{
+  width: 100%;
+  min-height: calc(100vh - 230px - 129px);
+}
+.null-item__thumb{
+  display: flex;
+  align-items: center;
+  justify-content: space-around
+}

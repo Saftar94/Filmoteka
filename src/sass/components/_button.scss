@@ -1,0 +1,251 @@
+.modal__close-button {
+  position: absolute;
+  background: none;
+  outline: none;
+  border: none;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  display: block;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all $time-cubic;
+  &:hover {
+    filter: drop-shadow(0 0 5px $accent-color);
+  }
+  &:focus {
+    background-color: $fourth-background-color;
+  }
+}
+
+.global-button {
+  border: $button-border;
+  box-sizing: border-box;
+  border-radius: 5px;
+  height: 44px;
+  width: 113px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  color: $primary-text-color;
+  background: none;
+  justify-content: center;
+  transition: all $time-cubic;
+  @media screen and (min-width: $tablet-general) {
+    width: 125px;
+  }
+  @media screen and (min-width: $desktop-up) {
+    width: 152px;
+    &:first-child {
+      margin-right: 15px;
+    }
+  }
+  &:hover,
+  &:focus {
+    background: $second-accent-btn-color;
+    color: $accent-btn-color;
+    border-color: $second-accent-btn-color;
+  }
+}
+
+.hero-library__button {
+  @extend %button;
+  width: 130px;
+  background-color: transparent;
+  border: 1px solid $form-text-color;
+
+  transition: box-shadow $time-cubic;
+
+  &:hover,
+  &:focus,
+  &.is-active {
+    box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
+    background-color: $second-accent-btn-color;
+    border-color: $second-accent-btn-color;
+  }
+
+  &--watched {
+    margin-right: 15px;
+  }
+
+  @media screen and (min-width: $tablet-general) {
+    width: 136px;
+  }
+}
+
+.modal-theme__button {
+  border: $button-border;
+  box-sizing: border-box;
+  border-radius: 5px;
+  height: 44px;
+  width: 113px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  color: $primary-text-color;
+  background: none;
+  justify-content: center;
+  transition: all $time-cubic;
+  @media screen and (min-width: $tablet-general) {
+    width: 125px;
+  }
+  @media screen and (min-width: $desktop-up) {
+    width: 152px;
+  }
+  &:hover,
+  &:focus {
+    background: $second-accent-btn-color;
+    color: $accent-btn-color;
+    border-color: $second-accent-btn-color;
+  }
+}
+
+//toggle change theme: light-dar
+.dark-toggle {
+  display: flex;
+  align-items: center;
+  z-index: 3001;
+}
+.dark-toggle__checkbox {
+  display: none;
+}
+
+.dark-toggle__checkbox:checked ~ .background {
+  background: $indigo-background;
+}
+.dark-toggle__checkbox:checked + .dark-toggle__label {
+  background: $indigo-color;
+  border-color: $indigo-border;
+}
+.dark-toggle__checkbox:checked
+  + .dark-toggle__label
+  .dark-toggle__label-background {
+  left: 60px * $dark-button-scale;
+  width: 5px * $dark-button-scale;
+}
+.dark-toggle__checkbox:checked
+  + .dark-toggle__label
+  .dark-toggle__label-background:before {
+  width: 5px * $dark-button-scale;
+  height: 5px * $dark-button-scale;
+  top: -25px * $dark-button-scale;
+}
+.dark-toggle__checkbox:checked
+  + .dark-toggle__label
+  .dark-toggle__label-background:after {
+  width: 5px * $dark-button-scale;
+  height: 5px * $dark-button-scale;
+  left: -30px * $dark-button-scale;
+  top: 20px * $dark-button-scale;
+}
+.dark-toggle__checkbox:checked + .dark-toggle__label:before {
+  background: $white;
+  border-color: $gray-border;
+  animation-name: switch;
+  animation-duration: 350ms;
+  animation-fill-mode: forwards;
+}
+.dark-toggle__checkbox:checked + .dark-toggle__label:after {
+  transition-delay: 350ms;
+  opacity: 1;
+}
+.dark-toggle__label {
+  width: 200px * $dark-button-scale;
+  height: 100px * $dark-button-scale;
+  background: $blue-color;
+  border-radius: 100px * $dark-button-scale;
+  border: 2px solid $blue-background;
+  display: flex;
+  position: relative;
+  transition: all 350ms ease-in;
+  cursor: pointer;
+  z-index: 3001;
+}
+.dark-toggle__label-background {
+  width: 10px * $dark-button-scale;
+  height: 5px * $dark-button-scale;
+  border-radius: 5px * $dark-button-scale;
+  position: relative;
+  background: var($white);
+  left: 135px * $dark-button-scale;
+  top: 45px * $dark-button-scale;
+  transition: all 150ms ease-in;
+}
+.dark-toggle__label-background:before {
+  content: '';
+  position: absolute;
+  top: -5px * $dark-button-scale;
+  width: 40px * $dark-button-scale;
+  height: 5px * $dark-button-scale;
+  border-radius: 5px * $dark-button-scale;
+  background: $white;
+  left: -20px * $dark-button-scale;
+  transition: all 150ms ease-in;
+}
+.dark-toggle__label-background:after {
+  content: '';
+  position: absolute;
+  top: 5px * $dark-button-scale;
+  width: 40px * $dark-button-scale;
+  height: 5px * $dark-button-scale;
+  border-radius: 5px * $dark-button-scale;
+  background: $white;
+  left: -10px * $dark-button-scale;
+  transition: all 150ms ease-in;
+}
+.dark-toggle__label:before {
+  animation-name: reverse;
+  animation-duration: 350ms;
+  animation-fill-mode: forwards;
+  transition: all 350ms ease-in;
+  content: '';
+  width: 82px * $dark-button-scale;
+  height: 82px * $dark-button-scale;
+  border: 2px solid $yellow-border;
+  top: 4px * $dark-button-scale;
+  left: 4px * $dark-button-scale;
+  position: absolute;
+  border-radius: 82px * $dark-button-scale;
+  background: $yellow-background;
+}
+.dark-toggle__label:after {
+  transition-delay: 0ms;
+  transition: all 250ms ease-in;
+  position: absolute;
+  content: '';
+  box-shadow: $gray-dots -13px * $dark-button-scale 0 0 2px * $dark-button-scale,
+    $gray-dots -24px * $dark-button-scale 14px * $dark-button-scale 0 -2px *
+      $dark-button-scale;
+  left: 143px * $dark-button-scale;
+  top: 23px * $dark-button-scale;
+  width: 10px * $dark-button-scale;
+  height: 10px * $dark-button-scale;
+  background: transparent;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.help__form-button {
+  @extend %button;
+  width: 100%;
+  background-color: $accent-color;
+  border-style: none;
+
+  &:hover,
+  &:focus {
+    background-color: $accent-btn-color;
+    color: $accent-color;
+    border: 1px solid $accent-color;
+  }
+}
+
+
